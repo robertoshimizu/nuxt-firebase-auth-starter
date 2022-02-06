@@ -1,6 +1,10 @@
 import { Unsubscribe } from 'firebase/auth';
 import formatUser from '~/helpers/format-user';
 
+/**
+ * Sets user composable and token cookie value
+ * based on sign-in, sign-out, and token refresh events.
+ */
 export default function () {
   const { $firebaseAuth } = useNuxtApp();
   const token = useCookie('token', {
