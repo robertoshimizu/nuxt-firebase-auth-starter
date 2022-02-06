@@ -4,7 +4,7 @@ import formatUser from '~/helpers/format-user';
 
 const { $firebaseAuth } = useNuxtApp();
 const token = useCookie('token', {
-	path: '/',
+  path: '/',
 });
 
 const firebaseUser = useUser();
@@ -12,24 +12,24 @@ const firebaseUser = useUser();
 let unsubscribe: Unsubscribe;
 
 onMounted(() => {
-	unsubscribe = $firebaseAuth.onIdTokenChanged(async (user) => {
-		if (user) {
-			token.value = await user.getIdToken();
-			firebaseUser.value = formatUser(user);
-		} else {
-			token.value = null;
-			firebaseUser.value = null;
-		}
-	});
+  unsubscribe = $firebaseAuth.onIdTokenChanged(async (user) => {
+    if (user) {
+      token.value = await user.getIdToken();
+      firebaseUser.value = formatUser(user);
+    } else {
+      token.value = null;
+      firebaseUser.value = null;
+    }
+  });
 });
 
 onUnmounted(() => {
-	unsubscribe?.();
+  unsubscribe?.();
 });
 </script>
 
 <template>
-	<div>
-		<slot />
-	</div>
+  <div>
+    <slot />
+  </div>
 </template>

@@ -1,10 +1,10 @@
 import { useState } from '#app';
 
 interface User {
-	uid: string;
-	email: string;
+  uid: string;
+  email: string;
 }
 
 export default function () {
-	return useState<User>('user', () => null);
+  return useState<User>('user', () => null);
 }
