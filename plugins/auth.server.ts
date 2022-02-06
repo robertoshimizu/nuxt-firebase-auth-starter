@@ -6,7 +6,9 @@ import formatUser from '~/helpers/format-user';
 // Checks if token is valid on first load.
 
 export default defineNuxtPlugin(async () => {
-  const token = useCookie('token');
+  const token = useCookie('token', {
+    path: '/',
+  });
   const user = useUser();
 
   const auth = getAuth(app);
@@ -15,5 +17,6 @@ export default defineNuxtPlugin(async () => {
     user.value = formatUser(result);
   } catch (e) {
     // Not authenticated or invalid token
+    token.value = null;
   }
 });
