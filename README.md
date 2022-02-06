@@ -10,7 +10,7 @@ Make sure to install the dependencies
 yarn install
 ```
 
-Set [service account](https://firebase.google.com/docs/admin/setup#initialize-sdk) environment variable:
+Set [service account](https://firebase.google.com/docs/admin/setup#initialize-sdk) environment variable
 
 ```
 export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
