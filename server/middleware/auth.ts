@@ -4,7 +4,7 @@ import { getApp } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 
 export default async (req: IncomingMessage, res: ServerResponse, next) => {
-  if (req.url === '/api/protected') {
+  if (req.url.includes('/api/')) {
     const token = useCookie(req, 'token');
     const app = getApp();
     const auth = getAuth(app);
