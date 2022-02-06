@@ -25,10 +25,12 @@ const signIn = async () => {
 
 <template>
   <div>
-    <input type="email" placeholder="email" v-model="email" /> <br />
-    <input type="password" placeholder="password" v-model="password" /> <br />
-    <button @click="signIn" :disabled="disabled">
-      {{ disabled ? 'Please wait...' : 'Sign in' }}
-    </button>
+    <form @submit.prevent="signIn">
+      <input type="email" placeholder="email" v-model="email" /> <br />
+      <input type="password" placeholder="password" v-model="password" /> <br />
+      <button type="submit" :disabled="disabled">
+        {{ disabled ? 'Please wait...' : 'Sign in' }}
+      </button>
+    </form>
   </div>
 </template>
