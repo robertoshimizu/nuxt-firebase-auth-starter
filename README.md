@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 + Firebase 9 Starter
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+Authenticated server-side rendering with Nuxt 3 and Firebase 9.
 
 ## Setup
 
@@ -8,6 +8,12 @@ Make sure to install the dependencies
 
 ```bash
 yarn install
+```
+
+Add your firebase credentials
+
+```
+cp .env.example .env
 ```
 
 ## Development
