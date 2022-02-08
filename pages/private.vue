@@ -13,7 +13,7 @@ const signOut = async () => {
 </script>
 
 <template>
-  <div>
+  <div v-if="user">
     <div>Welcome, {{ user.email }}</div>
     <div>{{ data ? data.message : 'Fetching...' }}</div>
     <button @click="signOut">Sign out</button>
