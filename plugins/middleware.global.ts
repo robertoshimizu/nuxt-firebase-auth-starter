@@ -1,18 +1,14 @@
 export default defineNuxtPlugin(() => {
-  const user = useUser();
+  const user = useUser()
   addRouteMiddleware(
     'auth',
     (to) => {
-      if (to.path === '/' && user.value) {
-        return navigateTo('/private');
-      }
+      if (to.path === '/' && user.value)
+        return navigateTo('/private')
 
-      if (to.path !== '/' && !user.value) {
-        return navigateTo('/');
-      }
-
-      return;
+      if (to.path !== '/' && !user.value)
+        return navigateTo('/')
     },
-    { global: true }
-  );
-});
+    { global: true },
+  )
+})

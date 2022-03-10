@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt3'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -7,4 +7,4 @@ export default defineNuxtConfig({
     firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
     firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL,
   },
-});
+})

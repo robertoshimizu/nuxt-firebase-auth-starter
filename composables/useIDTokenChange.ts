@@ -1,33 +1,34 @@
-import { Unsubscribe } from 'firebase/auth';
-import formatUser from '~/helpers/format-user';
+import type { Unsubscribe } from 'firebase/auth'
+import formatUser from '~/helpers/format-user'
 
 /**
  * Sets user composable and token cookie value
  * based on sign-in, sign-out, and token refresh events.
  */
-export default function () {
-  const { $firebaseAuth } = useNuxtApp();
+export default function() {
+  const { $firebaseAuth } = useNuxtApp()
   const token = useCookie('token', {
     path: '/',
-  });
+  })
 
-  const firebaseUser = useUser();
+  const firebaseUser = useUser()
 
-  let unsubscribe: Unsubscribe;
+  let unsubscribe: Unsubscribe
 
   onMounted(() => {
-    unsubscribe = $firebaseAuth.onIdTokenChanged(async (user) => {
+    unsubscribe = $firebaseAuth.onIdTokenChanged(async(user) => {
       if (user) {
-        token.value = await user.getIdToken();
-        firebaseUser.value = formatUser(user);
-      } else {
-        token.value = null;
-        firebaseUser.value = null;
+        token.value = await user.getIdToken()
+        firebaseUser.value = formatUser(user)
       }
-    });
-  });
+      else {
+        token.value = null
+        firebaseUser.value = null
+      }
+    })
+  })
 
   onUnmounted(() => {
-    unsubscribe?.();
-  });
+    unsubscribe?.()
+  })
 }

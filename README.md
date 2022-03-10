@@ -7,7 +7,7 @@ Authenticated server-side rendering with Nuxt 3 and Firebase 9.
 Make sure to install the dependencies
 
 ```bash
-pnpm install
+npm install
 ```
 
 Set [service account](https://firebase.google.com/docs/admin/setup#initialize-sdk) environment variable
@@ -27,7 +27,7 @@ cp .env.example .env
 Start the development server on http://localhost:3000
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 ## Production
@@ -35,7 +35,7 @@ pnpm dev
 Build the application for production:
 
 ```bash
-pnpm build
+npm run build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
