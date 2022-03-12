@@ -8,8 +8,8 @@
     "lint:fix": "eslint --ext=js,ts,vue,md,json . --fix"
   },
   "dependencies": {
-    "firebase": "^9.6.3",
-    "firebase-admin": "^10.0.1"
+    "firebase": "^9.6.8",
+    "firebase-admin": "^10.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
