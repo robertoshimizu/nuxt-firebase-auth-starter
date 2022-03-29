@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { $firebaseAuth } = useNuxtApp()
-const { data } = await useLazyAsyncData<{ message: string }>('protected', () =>
+const { data } = useLazyAsyncData<{ message: string }>('protected', () =>
   $fetch('/api/protected'),
 )
 const router = useRouter()

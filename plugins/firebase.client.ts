@@ -8,7 +8,6 @@ export default defineNuxtPlugin(() => {
   const firebaseConfig = {
     apiKey: config.firebaseApiKey,
     authDomain: config.firebaseAuthDomain,
-    databaseURL: config.firebaseDatabaseURL,
   }
 
   const app = initializeApp(firebaseConfig)
