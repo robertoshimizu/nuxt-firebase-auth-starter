@@ -1,9 +1,11 @@
 <script setup lang="ts">
-useIDTokenChange()
+const token: String = useIDTokenChange()
+
 </script>
 
 <template>
   <div>
+    Token: {{ token }}
     <slot />
   </div>
 </template>
