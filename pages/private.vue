@@ -1,14 +1,16 @@
 <script setup lang="ts">
+
+import useUser from '~~/composables/useUser'
+
 const { $firebaseAuth } = useNuxtApp()
-const { data } = useLazyAsyncData<{ message: string }>('protected', () =>
-  $fetch('/api/protected'),
-)
+const data = { message: 'This is a protected content. And you are signedIn.' }
+
 const router = useRouter()
 const user = useUser()
 
-const signOut = async() => {
+async function signOut() {
   await $firebaseAuth.signOut()
-  router.push('/')
+  router.push({ name: 'index' })
 }
 </script>
 
@@ -16,8 +18,11 @@ const signOut = async() => {
   <div v-if="user">
     <div>Welcome, {{ user.email }}</div>
     <div>{{ data ? data.message : 'Fetching...' }}</div>
-    <button @click="signOut">
+    <button @click="signOut()">
       Sign out
     </button>
+  </div>
+  <div v-else>
+    <div>{{ data.message }}</div>
   </div>
 </template>
