@@ -15,7 +15,7 @@ const signIn = async() => {
       email.value,
       password.value,
     )
-    router.push('/private')
+    router.push({ name: 'private' })
   }
   catch (e) {
     // eslint-disable-next-line no-alert

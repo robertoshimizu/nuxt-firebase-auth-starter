@@ -3,7 +3,7 @@
 import useUser from '~~/composables/useUser'
 
 const { $firebaseAuth } = useNuxtApp()
-const data = { message: 'This is a protected content. You cannot access it without sign in.' }
+const data = { message: 'This is a protected content. And you are signedIn.' }
 
 const router = useRouter()
 const user = useUser()
