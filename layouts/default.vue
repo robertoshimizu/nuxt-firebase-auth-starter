@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import useIDTokenChange from '../composables/useIDTokenChange'
+import userAuthChange from '../composables/userAuthChange'
 
-const token: String = useIDTokenChange()
+userAuthChange()
 
 </script>
 
@@ -24,7 +24,6 @@ const token: String = useIDTokenChange()
   </nav>
 
   <div>
-    Token: {{ token }}
     <slot />
   </div>
 
