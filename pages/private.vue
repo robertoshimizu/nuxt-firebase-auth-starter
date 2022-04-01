@@ -3,7 +3,6 @@
 import useUser from '~~/composables/useUser'
 
 const { $firebaseAuth } = useNuxtApp()
-const data = { message: 'This is a protected content. And you are signedIn.' }
 
 const router = useRouter()
 const user = useUser()
@@ -17,12 +16,11 @@ async function signOut() {
 <template>
   <div v-if="user">
     <div>Welcome, {{ user.email }}</div>
-    <div>{{ data ? data.message : 'Fetching...' }}</div>
     <button @click="signOut()">
       Sign out
     </button>
   </div>
   <div v-else>
-    <div>{{ data.message }}</div>
+    <div>This is a protected screen. You need to sign in.</div>
   </div>
 </template>

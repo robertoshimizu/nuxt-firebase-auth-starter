@@ -6,6 +6,30 @@ export default defineNuxtConfig({
     firebaseApiKey: process.env.FIREBASE_API_KEY,
     firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
   },
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    // ...
+  ],
+  tailwindcss: {
+    config: {
+      theme: {
+        extend: {
+
+        },
+      },
+      daisyui: {
+        styled: true,
+        themes: true,
+        base: true,
+        utils: true,
+        logs: true,
+        rtl: false,
+        darkTheme: 'dark',
+      },
+    },
+    injectPosition: 0,
+    viewer: true,
+  },
   head: {
     title: 'Nuxt3 Firebase Starter',
     htmlAttrs: {
