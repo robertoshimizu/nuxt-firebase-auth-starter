@@ -68,11 +68,13 @@ const signInFacebook = async() => {
     // Handle Errors here.
       const errorCode = error.code
       const errorMessage = error.message
+      // eslint-disable-next-line no-console
       console.log(error.message)
       // The email of the user's account used.
       const email = error.email
       // The AuthCredential type that was used.
       const credential = FacebookAuthProvider.credentialFromError(error)
+      // eslint-disable-next-line no-console
       console.log(credential)
     // ...
     })
